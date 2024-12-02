@@ -17,48 +17,64 @@ The core layout enhancement pipeline consists of the following stages:
 1. Detailed Architecture Diagram
 
 ```mermaid
-graph TD
+graph 
     subgraph "Parser Layer"
-        A[Mermaid Parser] -->|Raw AST| B[Graph Constructor]
+        A[Mermaid<br>Parser] -->|Raw<br>AST| B[Graph<br>Constructor]
         B -->|Graph Structure| C[Analysis Engine]
     end
 
     subgraph "Analysis Engine"
-        C -->|Graph Metrics| D[Structural Analyzer]
-        C -->|Semantic Data| E[LLM Analyzer]
+        C -->|Graph<br>Metrics| D[Structural<br>Analyzer]
+        C -->|Semantic<br>Data| E[LLM<br>Analyzer]
         
-        D -->|Metrics| F[Layout Coordinator]
-        E -->|Enhanced Properties| F
+        D -->|Metrics| F[Layout<br>Coordinator]
+        E -->|Enhanced<br> Properties| F
         
-        D -->|Graph Properties| D1[Centrality Analysis]
-        D -->|Hierarchy| D2[Clustering Detection]
-        D -->|Flow Analysis| D3[Edge Pattern Detection]
+        D -->|Graph Properties| D1[Centrality<br>Analysis]
+        D -->|Hierarchy| D2[Clustering<br>Detection]
+        D -->|Flow<br>Analysis| D3[Edge<br>Pattern<br>Detection]
         
-        E -->|Semantic Weight| E1[Node Importance]
-        E -->|Relationship Type| E2[Edge Classification]
-        E -->|Visual Hints| E3[Style Suggestions]
+        E -->|Semantic<br>Weight| E1[Node<br>Importance]
+        E -->|Relationship<br>Type| E2[Edge<br>Classification]
+        E -->|Visual<br>Hints| E3[Style<br>Suggestions]
     end
 
-    subgraph "Layout Engine"
-        F -->|Layout Config| G[Force Director]
-        G -->|Initial Layout| H[Hierarchical Optimizer]
-        H -->|Optimized Layout| I[Edge Router]
+    subgraph "Layout&nbsp;Engine"
+        F -->|Layout<br>Config| G[Force<br>Director]
+        G -->|Initial<br>Layout| H[Hierarchical<br>Optimizer]
+        H -->|Optimized<br>Layout| I[Edge<br>Router]
         
-        J[Constraint Solver] -->|Spacing Rules| H
-        J -->|Crossing Rules| I
+        J[Constraint<br>Solver] -->|Spacing<br>Rules| H
+        J -->|Crossing<br>Rules| I
         
-        K[Style Engine] -->|Visual Rules| L[Final Renderer]
-        I -->|Routed Graph| L
-    end
-    
-    subgraph "LLM Enhancement"
-        M[GPT-4 Service] -->|Layout Hints| F
-        M -->|Style Guide| K
-        M -->|Semantic Analysis| E
+        K[Style<br>Engine] -->|Visual<br>Rules| L[Final<br>Renderer]
+        I -->|Routed<br>Graph| L
     end
 
-    style M fill:#f9f,stroke:#333,stroke-width:2px
+    subgraph "LLM&nbsp;Enhancement"
+        M[GPT-4<br>Service] -->|Layout<br>Hints| F
+        M -->|Style<br>Guide| K
+        M -->|Semantic<br>Analysis| E
+    end
+
+    style A fill:#add8e6,stroke:#005,stroke-width:2px,font-size:12px
+    style B fill:#fce5cd,stroke:#804000,stroke-width:2px,font-size:12px
+    style C fill:#ffcccb,stroke:#800000,stroke-width:3px,font-size:14px,stroke-dasharray:5,5
+    style D fill:#d9ead3,stroke:#38761d,stroke-width:2px
+    style E fill:#d9ead3,stroke:#38761d,stroke-width:2px
+    style D1 fill:#b6d7a8,stroke:#274e13,stroke-width:2px
+    style E1 fill:#c9daf8,stroke:#3c78d8,stroke-width:2px
+    style G fill:#e6b8af,stroke:#990000,stroke-width:2px,stroke-dasharray:3,3
+    style H fill:#ffe599,stroke:#bf9000,stroke-width:2px
     style L fill:#9f9,stroke:#333,stroke-width:2px
+    style M fill:#f9f,stroke:#333,stroke-width:3px,stroke-dasharray:7,3
+
+    %% Connections and edges
+    linkStyle default stroke-width:2px,stroke:#000000,fill:none
+    linkStyle 0 stroke:#005,stroke-width:2px,stroke-dasharray:4,2
+    linkStyle 1 stroke:#800000,stroke-width:2px,stroke-dasharray:3,3
+    linkStyle 2 stroke:#38761d,stroke-width:2px,stroke-dasharray:5,5
+    linkStyle 3 stroke:#3c78d8,stroke-width:2px,fill:none
 ```
 
 2. Layout Pipeline Diagram
