@@ -14,31 +14,7 @@ The core layout enhancement pipeline consists of the following stages:
 
 ### 2. Architecture
 
-#. Overview
-
-```mermaid
-graph TD
-    subgraph "Parse Layer (Node.js)"
-        A[Mermaid Code] -->|mermaid.js| B[DAG]
-    end
-
-    subgraph "Layout Engine (Python)"
-        B -->|Init| D[Cytoscape Graph]
-        D -->|Force Layout| E[Initial Layout]
-        
-        subgraph "Enhancement Loop"
-            E -->|Analysis| F[LLM Suggestions]
-            F -->|Layout Params| G[Force Layout Config]
-            G -->|Adjust| D
-        end
-    end
-
-    subgraph "Output (Python)"
-        G -->|Final Layout| H[Enhanced Graph]
-    end
-```
-
-#. Detailed Architecture Diagram
+1. Detailed Architecture Diagram
 
 ```mermaid
 graph TD
@@ -85,7 +61,7 @@ graph TD
     style L fill:#9f9,stroke:#333,stroke-width:2px
 ```
 
-#. Layout Pipeline Diagram
+2. Layout Pipeline Diagram
 
 ```mermaid  
 graph TD
