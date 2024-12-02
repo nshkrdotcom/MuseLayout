@@ -1,4 +1,4 @@
-## Diagram Layout Enhancement Pipeline
+## MuseLayout - Diagram Layout Enhancement Pipeline
 
 This project aims to enhance the layout of Mermaid diagrams using a combination of graph algorithms, LLM (Large Language Model) guidance, and iterative refinement.  The pipeline takes Mermaid code as input and produces an optimized and visually appealing diagram as output.
 
