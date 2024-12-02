@@ -20,7 +20,7 @@ The core layout enhancement pipeline consists of the following stages:
 graph 
     subgraph "Parser Layer"
         A[Mermaid<br>Parser] -->|Raw<br>AST| B[Graph<br>Constructor]
-        B -->|Graph Structure| C[Analysis Engine]
+        B -->|Graph<br>Structure| C[Analysis<br>Engine]
     end
 
     subgraph "Analysis Engine"
@@ -30,7 +30,7 @@ graph
         D -->|Metrics| F[Layout<br>Coordinator]
         E -->|Enhanced<br> Properties| F
         
-        D -->|Graph Properties| D1[Centrality<br>Analysis]
+        D -->|Graph<br>Properties| D1[Centrality<br>Analysis]
         D -->|Hierarchy| D2[Clustering<br>Detection]
         D -->|Flow<br>Analysis| D3[Edge<br>Pattern<br>Detection]
         
@@ -57,21 +57,21 @@ graph
         M -->|Semantic<br>Analysis| E
     end
 
-	style A fill:#add8e6,stroke:#005,stroke-width:2px
-	style B fill:#fce5cd,stroke:#804000,stroke-width:2px
-	style C fill:#ffcccb,stroke:#800000,stroke-width:3px,stroke-dasharray:5,5
-	style D fill:#d9ead3,stroke:#38761d,stroke-width:2px,font-color:#000
-	style E fill:#d9ead3,stroke:#38761d,stroke-width:2px,font-color:#000
-	style D1 fill:#b6d7a8,stroke:#274e13,stroke-width:2px,font-color:#000
-	style D2 fill:#b6d7a8,stroke:#274e13,stroke-width:2px,font-color:#000
-	style D3 fill:#b6d7a8,stroke:#274e13,stroke-width:2px,font-color:#000
-	style E1 fill:#c9daf8,stroke:#3c78d8,stroke-width:2px,font-color:#000
-	style E2 fill:#c9daf8,stroke:#3c78d8,stroke-width:2px,font-color:#000
-	style E3 fill:#c9daf8,stroke:#3c78d8,stroke-width:2px,font-color:#000
-	style G fill:#e6b8af,stroke:#990000,stroke-width:2px,stroke-dasharray:3,3
-	style H fill:#ffe599,stroke:#bf9000,stroke-width:2px
-	style J fill:#e6b8af,stroke:#990000,stroke-width:2px
-	style L fill:#90ee90,stroke:#333,stroke-width:2px
+	style A fill:#add8e6,stroke:#005,stroke-width:2px,color:#000
+	style B fill:#fce5cd,stroke:#804000,stroke-width:2px,color:#000
+	style C fill:#ffcccb,stroke:#800000,stroke-width:3px,color:#000,stroke-dasharray:5,5
+	style D fill:#d9ead3,stroke:#38761d,stroke-width:2px,color:#000
+	style E fill:#d9ead3,stroke:#38761d,stroke-width:2px,color:#000
+	style D1 fill:#b6d7a8,stroke:#274e13,stroke-width:2px,color:#000
+	style D2 fill:#b6d7a8,stroke:#274e13,stroke-width:2px,color:#000
+	style D3 fill:#b6d7a8,stroke:#274e13,stroke-width:2px,color:#000
+	style E1 fill:#c9daf8,stroke:#3c78d8,stroke-width:2px,color:#000
+	style E2 fill:#c9daf8,stroke:#3c78d8,stroke-width:2px,color:#000
+	style E3 fill:#c9daf8,stroke:#3c78d8,stroke-width:2px,color:#000
+	style G fill:#e6b8af,stroke:#990000,stroke-width:2px,color:#000,stroke-dasharray:3,3
+	style H fill:#ffe599,stroke:#bf9000,stroke-width:2px,color:#000
+	style J fill:#e6b8af,stroke:#990000,stroke-width:2px,color:#000
+	style L fill:#90ee90,stroke:#333,stroke-width:2px,color:#000
 	linkStyle default stroke-width:2px,stroke:#000000,fill:none
     linkStyle 0 stroke:#005,stroke-width:2px,stroke-dasharray:4,2
     linkStyle 1 stroke:#800000,stroke-width:2px,stroke-dasharray:3,3
