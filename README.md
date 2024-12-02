@@ -14,7 +14,7 @@ The core layout enhancement pipeline consists of the following stages:
 
 ### 2. Architecture
 
-The pipeline uses a combination of Node.js for Mermaid parsing and Python for the backend, layout engine, and LLM interaction.  This architecture allows for leveraging the strengths of each language:
+#. Overview
 
 ```mermaid
 graph TD
@@ -37,6 +37,79 @@ graph TD
         G -->|Final Layout| H[Enhanced Graph]
     end
 ```
+
+#. Detailed Architecture Diagram
+
+```mermaid
+graph TD
+    subgraph "Parser Layer"
+        A[Mermaid Parser] -->|Raw AST| B[Graph Constructor]
+        B -->|Graph Structure| C[Analysis Engine]
+    end
+
+    subgraph "Analysis Engine"
+        C -->|Graph Metrics| D[Structural Analyzer]
+        C -->|Semantic Data| E[LLM Analyzer]
+        
+        D -->|Metrics| F[Layout Coordinator]
+        E -->|Enhanced Properties| F
+        
+        D -->|Graph Properties| D1[Centrality Analysis]
+        D -->|Hierarchy| D2[Clustering Detection]
+        D -->|Flow Analysis| D3[Edge Pattern Detection]
+        
+        E -->|Semantic Weight| E1[Node Importance]
+        E -->|Relationship Type| E2[Edge Classification]
+        E -->|Visual Hints| E3[Style Suggestions]
+    end
+
+    subgraph "Layout Engine"
+        F -->|Layout Config| G[Force Director]
+        G -->|Initial Layout| H[Hierarchical Optimizer]
+        H -->|Optimized Layout| I[Edge Router]
+        
+        J[Constraint Solver] -->|Spacing Rules| H
+        J -->|Crossing Rules| I
+        
+        K[Style Engine] -->|Visual Rules| L[Final Renderer]
+        I -->|Routed Graph| L
+    end
+    
+    subgraph "LLM Enhancement"
+        M[GPT-4 Service] -->|Layout Hints| F
+        M -->|Style Guide| K
+        M -->|Semantic Analysis| E
+    end
+
+    style M fill:#f9f,stroke:#333,stroke-width:2px
+    style L fill:#9f9,stroke:#333,stroke-width:2px
+```
+
+#. Layout Pipeline Diagram
+
+```mermaid  
+graph TD
+    subgraph "Parse Layer"
+        A[Mermaid Code] -->|mermaid.js| B[DAG]
+        B -->|AST Parser| C[Python AST]
+    end
+
+    subgraph "Layout Engine"
+        C -->|Init| D[Cytoscape Graph]
+        D -->|Force Layout| E[Initial Layout]
+        
+        subgraph "Enhancement Loop"
+            E -->|Analysis| F[LLM Suggestions]
+            F -->|Layout Params| G[Force Layout Config]
+            G -->|Adjust| D
+        end
+    end
+
+    subgraph "Output"
+        G -->|Final Layout| H[Enhanced Graph]
+    end
+```
+
 
 ### 3.  Key Components and Technologies
 
